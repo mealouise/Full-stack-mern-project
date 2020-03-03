@@ -45,8 +45,9 @@
     border-radius: 4px;
     border-color: #f81d41;
     color:white;
-    padding:7px;
+    padding:2px;
     font-size:20px;
+    height:50px;
     margin-top: 20px;
 }
 
@@ -59,6 +60,10 @@
 
 input {
     background-color: #091F42;
+    height:25px;
+    width:200px;
+    border: 0;
+    border-bottom: 1px solid white;
 }
 
 .form-city {
@@ -69,5 +74,13 @@ input {
 
 
 .home-city::placeholder {
+    font-family: "arial";
     color:white;
+    font-size:20px;
+}
+
+.home-countrycode::placeholder {
+    font-family: "arial";
+    color:white;
+    font-size:20px;
 }

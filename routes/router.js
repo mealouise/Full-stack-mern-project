@@ -20,7 +20,7 @@ router.get('/getWeather', async (req,res) => {
 })
 
 router.get('/harryPotter', async (req,res) => {
-    let data = await this.getWeather.getHarryPotter()
+    let data = await getWeather.getHarryPotter()
     console.log(data)
     res.render('harryPotter', {
         data,
@@ -29,16 +29,16 @@ router.get('/harryPotter', async (req,res) => {
 })
 
 
-// router.get('/getNasaImage', async (req,res) => {
-//     let data = await getWeather.getNasaImage()
-//     // let date = data.date,
-//     let image = data.url,
-//     // let explanation = data.explanation
-//     console.log(data)
-//     res.render('getNasaImage', {
-//         image
-//     })
-// })
+router.get('/getNasaImage', async (req,res) => {
+    let data = await getWeather.getNasaImage()
+    // let date = data.date,
+    let image = data.url
+    // let explanation = data.explanation
+    console.log(data)
+    res.render('getNasaImage', {
+        image
+    })
+})
 
 router.post('/', async(req,res) => { // here you display the information
     let city = req.body.city;
@@ -59,21 +59,43 @@ router.post('/', async(req,res) => { // here you display the information
     //check on imsonia the get data works before build the front end
 });
 
-router.get('/chuckNorris',(req,res) => {
-    // let data = await getWeather.chuckNorris()
-    console.log(data)
-    res.render('chuckNorris');
-        // data,
-        // joke,
-        // title: `You have been given a random joke ${data}`
+router.get('/chuckNorris', async(req,res) => {
+    let data = await getWeather.chuckNorris()
+    data = JSON.parse(data)
+    console.log(data.value)
+
+    let joke = data.value
+    res.render('chuckNorris', {
+        data,
+        joke: joke
+    });
     });
 
 router.post('/chuckNorris', async(req,res) => {
-    let data = await this.getWeather.chuckNorris()
+    let data = await getWeather.chuckNorris()
     console.log(data)
     let joke = data.categories.value;
     res.render('chuckNorris', {data: {joke}});
 })
+
+router.get('/cocktailInfo', async(req,res) => {
+    let data = await getWeather.cocktailInfo()
+    console.log(data)
+    res.render('cocktailInfo', {
+        data,
+        title:`Your cocktail is ${data}`
+    });
+});
+
+router.post('/cocktailInfo', async(req,res) => {
+    let ingredient = req.body.ingredient;
+    let data = await getWeather.cocktailInfo(ingredient);
+    res.render('/cocktailInfo', {ingredient})
+})
+
+
+// get method needed for cocktail... 
+// need to grab the data from getWeather.js
 
 // router.post('/cocktailInfo', async(req,res) => {
 //     let ingredient = req.body.strIngredient;
