@@ -9,9 +9,6 @@ router.get('/', (req,res) => {
     res.render('index');
 });
 
-router.get('/nasa', (req,res) => {
-    res.render('nasa');
-});
 
 router.get('/getWeather', async (req,res) => {
     let data = await getWeather.getWeather()
@@ -31,29 +28,23 @@ router.get('/harryPotter', async (req,res) => {
     })
 })
 
-router.get('/chuckNorris', async (req,res) => {
-    let data = await getWeather.chuckNorris()
-    console.log(data)
-    res.render('chuckNorris', {
-        data,
-        title: `You have been given a random joke ${data}`
-    })
-})
 
-router.get('/getNasaImage', async (req,res) => {
-    let data = await getWeather.getNasaImage()
-    let image = data.url
-    console.log(data)
-    res.render('getNasaImage', {
-        image,
-    })
-})
+// router.get('/getNasaImage', async (req,res) => {
+//     let data = await getWeather.getNasaImage()
+//     // let date = data.date,
+//     let image = data.url,
+//     // let explanation = data.explanation
+//     console.log(data)
+//     res.render('getNasaImage', {
+//         image
+//     })
+// })
 
 router.post('/', async(req,res) => { // here you display the information
     let city = req.body.city;
     let countryCode = req.body.countryCode;
 // dont want all logic so can use lib folder incase want to use the code elsewhere
-    let data = await getWeather(city,countryCode);
+    let data = await getWeather.getWeather(city,countryCode);
 
     let weatherData = {
         main: data.weather[0].main,
@@ -68,20 +59,40 @@ router.post('/', async(req,res) => { // here you display the information
     //check on imsonia the get data works before build the front end
 });
 
-router.post('/nasa', async(req,res) => {
-    let date = req.body.date;
-    let data1 = await getNasaPicture(date);
+router.get('/chuckNorris',(req,res) => {
+    // let data = await getWeather.chuckNorris()
+    console.log(data)
+    res.render('chuckNorris');
+        // data,
+        // joke,
+        // title: `You have been given a random joke ${data}`
+    });
 
+router.post('/chuckNorris', async(req,res) => {
+    let data = await this.getWeather.chuckNorris()
+    console.log(data)
+    let joke = data.categories.value;
+    res.render('chuckNorris', {data: {joke}});
+})
 
-    let nasaPicture = {
-        date: req.body.date,
-        explanation:req.body.explanation,
-        hdurl: req.body.hdurl,
-        title: req.body.title
-    }
-    console.log(data1);
-    res.render('nasa',{nasaPicture});
-});
+// router.post('/cocktailInfo', async(req,res) => {
+//     let ingredient = req.body.strIngredient;
+
+//     let data = await cocktailInfo(ingredient);
+
+//     let strDescription = data.strDescription;
+    
+//     res.render('cocktailInfo', {strDescription});
+// })
+
+router.post('/getNasaImage', async(req,res) => {
+    let data = await getWeather.getNasaImage()
+    console.log(data)
+    res.render('getNasaImage', {
+        data,
+        title: `Picture of the day ${data}`
+    })
+})
 
 // all routes go in here
 

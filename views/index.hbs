@@ -1,7 +1,9 @@
-<h1>Weather data</h1>
+
+<div class="home-template">
+<h1 class="home-header">Simple Weather App</h1>
 
 
-<ul>
+<ul class="home-data">
  {{!-- {{#each weatherData}} - is a loop  --}}
  {{#each weatherData}} 
  <li>{{@key}} : {{this}}</li>
@@ -11,10 +13,12 @@
 <img src="http://openweathermap.org/img/wn/{{icon}}@2x.png" alt="weather icon">
 
 <form action='/' method="POST">
-    <label for="city">City : </label>
-    <input type="text" name="city">
-    <label for="countyCode">Country code</label>
-    <input type="text" name="countryCode">
+    <label class="form-city" for="city">City : </label>
+    <input class="home-city" type="text" name="city" placeholder="Search for a city">
     <br>
-    <input type="submit" value="send">
+    <label class="form-countrycode" for="countyCode">Country code: </label>
+    <input class="home-countrycode" type="text" name="countryCode" placeholder="Enter a country code">
+    <br>
+    <input class="submit-button" type="submit" value="SUBMIT">
 </form>
+</div>
