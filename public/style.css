@@ -1,17 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Henny+Penny&display=swap');
 
 .navbar{
     background-color: #41B3A3;
     display: flex;
-    justify-content: space-between;
 }
+
+
+.getweather-container {
+    margin-top: 50px;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.getweather-content {
+    background-color: #58bac9;
+    padding:50px;
+    align-items: center;
+}
+
 .navbar ul li {
     list-style: none;
     display: inline-block;
     padding: 10px 15px;
     cursor: pointer;
-    align-items: center;
+    margin-right:220px;
     /* margin-right: 100px; */
 }
 
@@ -20,6 +37,7 @@
     color: white;
     font-family: "Amatic SC";
     font-size: 40px;
+    justify-content: center;
 }
 
 .navbar a:hover {
@@ -37,14 +55,14 @@
     height: 800px;
     text-align: center;
     margin-left:100px;
-    background-color: #091F42;
+    background-color: #58bac9;
 }
 
 .submit-button {
     background-color: #f81d41;
     border-radius: 4px;
     border-color: #f81d41;
-    color:white;
+    color: #d0ebef;
     padding:2px;
     font-size:20px;
     height:50px;
@@ -53,34 +71,157 @@
 
 .form-countrycode {
     font-family: "arial";
-    color:white;
+    color:#d0ebef;
     font-size:25px;
     margin-top: 20px;
 }
 
 input {
-    background-color: #091F42;
+    background-color: #58bac9;
     height:25px;
     width:200px;
     border: 0;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #d0ebef;
 }
 
 .form-city {
     font-family: "arial";
-    color:white;
+    color: #d0ebef;
     font-size:25px;
 }
 
 
 .home-city::placeholder {
     font-family: "arial";
-    color:white;
+    color:#d0ebef;
     font-size:20px;
 }
 
 .home-countrycode::placeholder {
     font-family: "arial";
-    color:white;
+    color:#d0ebef;
     font-size:20px;
+}
+
+.chucknorris-content {
+    margin-left: auto;
+    margin-right:auto; 
+    background-color: black;
+    padding:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:75%;
+}
+     
+.chucknorris-joke {
+    font-family: 'Inconsolata', monospace;
+    color:white;
+    font-size:30px;
+}
+
+.chucknorris-joke::before {
+    content: open-quote;
+}
+
+.chucknorris-joke::after {
+    content: close-quote;
+}
+
+
+.chucknorris-header {
+    font-family: 'Poppins', sans-serif;
+    color:#d62e1c;
+    font-size: 80px;
+}
+
+.chucknorris-container {
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nasaimage-container {
+    margin-top: 50px;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://images.unsplash.com/photo-1542228846-2d791a09d7d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+
+.nasaimage-header {
+    color:white;
+    font-family: 'Titillium Web', sans-serif;
+    text-align: center;
+}
+
+.nasaimage {
+    padding:25px;
+    width:50%;
+    background-color: #292e33;
+}
+
+.nasaimage-headline{
+    display: flex;
+    justify-content: space-between;
+}
+.nasaimage-theme {
+    color:white;
+}
+
+.nasaimage-theme.nasaimage-font {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.nasaimage-url {
+    height:480px;
+    width: 439px;
+    text-align: center;
+}
+
+.nasaimage-picture {
+    height:150px;
+    width: 150px;
+}
+
+.harryPotter-container {
+    margin-top: 50px;
+    height:100vh;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.harryPotter-content {
+    width:50%;
+    height:500px;
+}
+
+.harryPotter-header {
+    margin:auto;
+    font-family: 'Henny Penny', cursive;
+    font-size: 70px;
+}
+
+.harryPotter-house {
+    width:180px;
+    height:260px;
+}
+
+.harryPotter-text {
+    font-family: 'Henny Penny', cursive;
+    text-align: center;
+    font-size: 30px;
+
+}
+
+.harryPotter-images {
+    padding-bottom:50px;
+}
+
+.harryPotter-sortinghat {
+    /* text-align: center; */
 }

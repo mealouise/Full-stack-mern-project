@@ -1,14 +1,15 @@
-<ul class="home-data">
- {{!-- {{#each weatherData}} - is a loop  --}}
- {{#each ingredient}} 
- <li>{{@key}} : {{this}}</li>
-{{/each}}  
-</ul>
+
+
 
 <form action='/cocktailInfo' method="POST">
-    <label for="search">Search : </label>
-    <input type="text" name="search" placeholder="Search for a cocktail">
+    <label for="ingredient">Search : </label>
+    <input type="text" name="ingredient" placeholder="Search for a cocktail">
     <br>
     <input class="submit-button" type="submit" value="SUBMIT">
 </form>
 </div>
+
+{{data}}
+
+{{strDrink}} <br>
+<img src={{strDrinkThumb}} alt="cocktail image">

@@ -1,5 +1,12 @@
-<h1>Nasa image</h1>
 
-{{!-- <img src="{{image}}" alt="nasa image"> --}}
-
-{{data}}
+<div class="nasaimage-container">
+    <div class="nasaimage">
+        <div class="nasaimage-headline">
+            <h1 class="nasaimage-header">Astronomy picture of the day</h1>
+            <img class="nasaimage-picture" src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
+        </div>
+        <div class="nasaimage-theme nasaimage-font">{{date}}</div><br>
+        <div class="nasaimage-theme nasaimage-font">Explanation: {{explanation}}</div><br>
+        <img class="nasaimage-theme nasaimage-font nasaimage-url" src={{url}} alt="nasa image">
+    </div>   
+</div>

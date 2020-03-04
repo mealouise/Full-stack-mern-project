@@ -1,24 +1,26 @@
 
-<div class="home-template">
-<h1 class="home-header">Simple Weather App</h1>
+<div class="getweather-container">
+    <div class="getweather-content">
+        <h1 class="home-header">Simple Weather App</h1>
 
 
-<ul class="home-data">
- {{!-- {{#each weatherData}} - is a loop  --}}
- {{#each weatherData}} 
- <li>{{@key}} : {{this}}</li>
-{{/each}}  
-</ul>
+        <ul class="home-data">
+        {{!-- {{#each weatherData}} - is a loop  --}}
+        {{#each weatherData}} 
+        <li>{{@key}} : {{this}}</li>
+        {{/each}}  
+        </ul>
 
-<img src="http://openweathermap.org/img/wn/{{icon}}@2x.png" alt="weather icon">
+        <img src="http://openweathermap.org/img/wn/{{icon}}@2x.png" alt="weather icon">
 
-<form action='/' method="POST">
-    <label class="form-city" for="city">City : </label>
-    <input class="home-city" type="text" name="city" placeholder="Search for a city">
-    <br>
-    <label class="form-countrycode" for="countyCode">Country code: </label>
-    <input class="home-countrycode" type="text" name="countryCode" placeholder="Enter a country code">
-    <br>
-    <input class="submit-button" type="submit" value="SUBMIT">
-</form>
+        <form action='/' method="POST">
+            <label class="form-city" for="city">City : </label>
+            <input class="home-city" type="text" name="city" placeholder="Search for a city">
+            <br>
+            <label class="form-countrycode" for="countyCode">Country code: </label>
+            <input class="home-countrycode" type="text" name="countryCode" placeholder="Enter a country code">
+            <br>
+            <input class="submit-button" type="submit" value="SUBMIT">
+        </form>
+    </div>
 </div>
