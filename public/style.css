@@ -12,7 +12,7 @@
 
 .getweather-container {
     margin-top: 50px;
-    height:100vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
 }
@@ -22,14 +22,18 @@
     padding:50px;
     align-items: center;
 }
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+}
 
 .navbar ul li {
     list-style: none;
-    display: inline-block;
-    padding: 10px 15px;
     cursor: pointer;
-    margin-right:220px;
-    /* margin-right: 100px; */
+
 }
 
 .navbar a {
@@ -118,6 +122,7 @@ input {
     font-family: 'Inconsolata', monospace;
     color:white;
     font-size:30px;
+    margin:0;
 }
 
 .chucknorris-joke::before {
@@ -204,6 +209,7 @@ input {
     margin:auto;
     font-family: 'Henny Penny', cursive;
     font-size: 70px;
+    text-align: center;
 }
 
 .harryPotter-house {
@@ -219,9 +225,18 @@ input {
 }
 
 .harryPotter-images {
+    margin-top:50px;
     padding-bottom:50px;
+    display: flex;
+    justify-content: center;
+    /* space-between needs adding */
 }
 
+.harryPotter-sorting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .harryPotter-sortinghat {
     /* text-align: center; */
 }

@@ -8,8 +8,11 @@
     <input class="submit-button" type="submit" value="SUBMIT">
 </form>
 </div>
-
-{{data}}
-
-{{strDrink}} <br>
-<img src={{strDrinkThumb}} alt="cocktail image">
+<ul>
+    {{#each drinks}} 
+        <li>
+            <p>{{this.strDrink}}</p>
+            <img src={{this.strDrinkThumb}} alt="cocktail image">
+        </li>
+    {{/each}}  
+</ul>

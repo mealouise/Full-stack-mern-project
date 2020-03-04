@@ -107,12 +107,11 @@ router.post('/cocktailInfo', async (req, res) => {
     let ingredient = req.body.ingredient;
     console.log(ingredient)
     let data = await getWeather.cocktailInfo(ingredient);
-
-    let strDrink = data.drinks.strDrink;
-    console.log(strDrink);
-    let strDrinkThumb = data.drinks.strDrinkThumb;
-    res.render('cocktailInfo', {strDrink,strDrinkThumb});
-        });
+    data = JSON.parse(data);
+    res.render('cocktailInfo', {
+        drinks:  data.drinks
+    });
+});
 
 
 // get method needed for cocktail... 
