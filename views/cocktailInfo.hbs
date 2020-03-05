@@ -1,18 +1,24 @@
 
 
 
-<form action='/cocktailInfo' method="POST">
-    <label for="ingredient">Search : </label>
-    <input type="text" name="ingredient" placeholder="Search for a cocktail">
-    <br>
-    <input class="submit-button" type="submit" value="SUBMIT">
-</form>
+<div class="cocktailInfo__container">
+    <div class="cocktailInfo__content">
+        <header class="cocktailInfo__header">Search for a cocktail</header>
+        <div class="cocktailInfo__userinput">
+            <form action='/cocktailInfo' method="POST">
+                <label for="ingredient"></label>
+                <input class="cocktailInfo__input" type="text" name="ingredient" placeholder="Enter ingredient...">
+                <br>
+                <div class="cocktailInfo__button"><input class="cocktailInfo__submit" type="submit" value="SUBMIT"></div>
+            </form>
+        </div>
+        <ul class="cocktailInfo__list">
+            {{#each drinks}} 
+                <li>
+                    <p class="cocktailInfo__text">{{this.strDrink}}</p>
+                    <img class="cocktailInfo__image" src={{this.strDrinkThumb}} alt="cocktail image">
+                </li>
+            {{/each}}  
+        </ul>
+    </div>
 </div>
-<ul>
-    {{#each drinks}} 
-        <li>
-            <p>{{this.strDrink}}</p>
-            <img src={{this.strDrinkThumb}} alt="cocktail image">
-        </li>
-    {{/each}}  
-</ul>
